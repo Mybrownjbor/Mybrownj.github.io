@@ -75,8 +75,8 @@ body
 .Contain
 {
   max-width: 100%;
-  height: 100%;
-  margin: auto 20%;
+
+  margin: 0 20%;
   background-color: #e1e1e1;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -86,6 +86,7 @@ body
 {
   text-align: justify;
   margin-top: 100px;
+  margin-bottom: auto;
 }
 
 .h1txt
@@ -96,12 +97,11 @@ body
   border-bottom: 1px solid gray;
   border-width: thin;
   font-style: italic;
-  font-weight: lighter;;
+  font-weight: lighter;
 }
 
 .typeColor
 {
-
   max-width: 100%;
   height: 18px;
   background-color: black;
@@ -115,21 +115,184 @@ body
 .footer
 {
   max-width: 100%;
-  height: 20px;
+  max-height: 100%;
+  width: 100%;
   background-color: black;
-  margin: auto 20%;
+
   text-align: right;
   color: whitesmoke;
-  padding-right: 10px;
-
+  clear: both;
 }
 
-@media only screen and (max-width: 500px) {
-  .rightMenuCover
-  {
-    display: none;
-  }
 
+
+.fade
+{
+  -webkit-animation-name: fadeNow;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fadeNow;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadeNow {
+  from
+  {
+    opacity: 0.1
+  }
+  to{
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeNow {
+  from
+  {
+    opacity: 0.1
+  }
+  to{
+    opacity: 1
+  }
+}
+
+.slideContainer
+{
+  width: 100%;
+  margin: 0px 0px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide
+{
+  display: none;
+  width: 100%;
+  height: 50%;
+/*  -webkit-clip-path: polygon(0% 100%, 0 24%, 6% 0%, 94% 0, 100% 24%, 100% 100%);
+  clip-path: polygon(0% 100%, 0 24%, 6% 0%, 94% 0, 100% 24%, 100% 100%);*/
+
+
+  overflow: hidden;
+}
+
+.caption
+{
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  color: white;
+  background-color: rgba(38, 209, 158, 0.5);
+  bottom: 25px;
+  left: 0px;
+}
+
+.caption-p
+{
+  color: white;
+  text-align: left;
+  bottom: 0;
+  padding: 5px 5px;
+  margin-top: 5px;
+}
+
+.caption-h
+{
+  color: white;
+  text-align: center;
+  top: 0;
+  padding: 5px 5px;
+  margin: 4px 0px;
+}
+
+.imgSlide
+{
+  width: 100%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.mainDot
+{
+  width: 100%;
+  height: 25px;
+  background-color: transparent;
+  clear: both;
+  position: absolute;
+  bottom: 0px;
+}
+
+.centerPlz
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots
+{
+  width:25px;
+  height: 25px;
+  background-color: whitesmoke;
+  position: relative;
+  margin: auto 4px;
+  float: left;
+}
+
+.left
+{
+  -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  background-color: rgb(89, 255, 165);
+  left: 0;
+}
+
+.theNavs
+{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: rgb(89, 255, 165);
+  top: 50%;
+  transform: 	translateY(-50%);
+  clear: left;
+  opacity: 0.4;
+}
+
+.theNavs:hover
+{
+  opacity: 1;
+}
+
+.right
+{
+  -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  background-color: rgb(89, 255, 165);
+  right: 0;
+}
+
+
+@media  screen and (max-width: 800px){
+  .caption
+  {
+    position: absolute;
+    max-width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(38, 209, 158, 0.5);
+    bottom: 0;
+    left: 0px;
+    overflow-y: scroll;
+  }
+  body
+  {
+    background-color: yellow;
+    font-family: "niceFontAsWell";
+    margin: auto auto;
+  }
   .MenuSection
   {
     padding: 0% 0%;
@@ -145,5 +308,82 @@ body
     padding: 5px 0px;
     text-align: left;;
     margin: 0% 0%;
+  }
+
+  .Contain
+  {
+    max-width: 100%;
+    margin: 0 0;
+    background-color: #e1e1e1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+  }
+  .mainDot
+  {
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    clear: both;
+    position: relative;
+    background-color: rgb(102, 37, 94);
+  }
+}
+@media only screen and (min-device-width: 320px)
+and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait){
+  .caption
+  {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    color: white;
+    background-color: rgba(38, 209, 158, 0.5);
+    bottom: 0;
+    left: 0px;
+    overflow-y: scroll;
+    padding-bottom: 0px;
+  }
+  body
+  {
+    background-color: red;
+    font-family: "niceFontAsWell";
+    margin: auto auto;
+  }
+  .MenuSection
+  {
+    padding: 0% 0%;
+    background-color: whitesmoke;
+    height: 110px;
+    width: 100%;
+    float: left;
+  }
+
+  .MenuSection ul li
+  {
+    display: block;
+    padding: 5px 0px;
+    text-align: left;;
+    margin: 0% 0%;
+  }
+
+  .Contain
+  {
+    max-width: 100%;
+    margin: 0 0;
+    background-color: #e1e1e1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+  }
+
+  .mainDot
+  {
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    clear: both;
+    position: relative;
+    background-color: rgb(102, 37, 94);
   }
 }
