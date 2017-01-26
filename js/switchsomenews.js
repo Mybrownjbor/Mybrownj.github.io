@@ -1,6 +1,6 @@
 var stopLoadSlide = false;
 var justCount = 0;
-/*$( document ).ready(function(){
+$( document ).ready(function(){
   switch (localStorage.getItem("savePageForReal")) {
     case "home":
       $("#content").load("home.html", function(){
@@ -62,38 +62,11 @@ var justCount = 0;
     console.log("fak");
   });
 
-});*/
+});
 
 $(window).bind('load',function() {
   /* Act on the event */
 });
-
-$( document ).ready(function(){
-  switch (localStorage.getItem("savePageForReal")) {
-    case "home":
-      $("#content").load("home.html", function(){
-        stopLoadSlide=false;
-        showSlide();
-        justCount++;
-      });
-      break;
-    case "info":
-        stopLoadSlide = true;
-        $("#content").load("info.html");
-      break;
-    case "showcase":
-        stopLoadSlide = true;
-        $("#content").load("showcase.html");
-      break;
-    default:
-      $("#content").load("home.html", function(){
-        localStorage.setItem("savePageForReal", "home");
-        stopLoadSlide=false;
-        showSlide();
-        justCount++;
-      });
-      console.log("HAVENT");
-  }
 
   $(".MenuSection ul").addClass("animMenu");
 
