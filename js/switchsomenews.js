@@ -1,6 +1,6 @@
 var stopLoadSlide = false;
 var justCount = 0;
-$(document).ready(function(){
+$( document ).ready(function(){
   switch (localStorage.getItem("savePageForReal")) {
     case "home":
       $(".content").load("home.html", function(){
