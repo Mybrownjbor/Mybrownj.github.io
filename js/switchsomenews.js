@@ -1,6 +1,6 @@
 var stopLoadSlide = false;
 var justCount = 0;
-$( document ).ready(function(){
+/*$( document ).ready(function(){
   switch (localStorage.getItem("savePageForReal")) {
     case "home":
       $("#content").load("home.html", function(){
@@ -62,7 +62,7 @@ $( document ).ready(function(){
     console.log("fak");
   });
 
-});
+});*/
 
 $(window).bind('load',function() {
   /* Act on the event */
@@ -116,14 +116,14 @@ $( document ).on("pagecreate","#pageone",function(){
     stopLoadSlide = true;
     localStorage.setItem("savePageForReal", "info");
     $("#content").load("info.html");
-
+    justCount++;
   });
 
   $("#showcase").on("tap",function(){
     stopLoadSlide = true;
     localStorage.setItem("savePageForReal", "showcase");
     $("#content").load("showcase.html");
-
+    justCount++;
   });
 
   $("#jTake").on("tap",function()
@@ -169,9 +169,14 @@ function showSlide()
         {
           indexOfSlide = 1;
         }
+      if(indexOfSlide === 0)
+      {
 
-      slides[indexOfSlide-1].style.display = "block";
-      dots[indexOfSlide-1].style.backgroundColor = "yellow";
+      }
+        slides[indexOfSlide-1].style.display = "block";
+        dots[indexOfSlide-1].style.backgroundColor = "yellow";
+        console.log(indexOfSlide);
+
 
     }
 
