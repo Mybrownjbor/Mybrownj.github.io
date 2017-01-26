@@ -28,34 +28,6 @@ $( document ).ready(function(){
 
   $(".MenuSection ul").addClass("animMenu");
 
-  $("#home").click(function(){
-    stopLoadSlide = false;
-    localStorage.setItem("savePageForReal", "home");
-    $("#content").load("home.html", function()
-    {
-      console.log(localStorage.getItem("notReloadToHome"));
-      if(justCount === 0 && stopLoadSlide === false)
-      {
-        showSlide();
-        justCount++;
-      }
-
-    });
-  });
-
-  $("#info").click(function(){
-    stopLoadSlide = true;
-    localStorage.setItem("savePageForReal", "info");
-    $("#content").load("info.html");
-
-  });
-
-  $("#showcase").click(function(){
-    stopLoadSlide = true;
-    localStorage.setItem("savePageForReal", "showcase");
-    $("#content").load("showcase.html");
-
-  });
 
   $("#jTake").click(function()
   {
@@ -63,6 +35,36 @@ $( document ).ready(function(){
   });
 
 });
+
+$("#home").click(function(){
+  stopLoadSlide = false;
+  localStorage.setItem("savePageForReal", "home");
+  $("#content").load("home.html", function()
+  {
+    console.log(localStorage.getItem("notReloadToHome"));
+    if(justCount === 0 && stopLoadSlide === false)
+    {
+      showSlide();
+      justCount++;
+    }
+
+  });
+});
+
+$("#info").click(function(){
+  stopLoadSlide = true;
+  localStorage.setItem("savePageForReal", "info");
+  $("#content").load("info.html");
+
+});
+
+$("#showcase").click(function(){
+  stopLoadSlide = true;
+  localStorage.setItem("savePageForReal", "showcase");
+  $("#content").load("showcase.html");
+
+});
+
 
 $(window).bind('load',function() {
   /* Act on the event */
