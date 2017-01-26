@@ -68,7 +68,7 @@ $(window).bind('load',function() {
   /* Act on the event */
 });
 
-$( document ).on("pagecreate","#pageone",function(){
+$( document ).on("load",function(){
   switch (localStorage.getItem("savePageForReal")) {
     case "home":
       $("#content").load("home.html", function(){
