@@ -68,43 +68,6 @@ $(window).bind('load',function() {
   /* Act on the event */
 });
 
-  $(".MenuSection ul").addClass("animMenu");
-
-  $("#home").on("tap",function(){
-    stopLoadSlide = false;
-    localStorage.setItem("savePageForReal", "home");
-    $("#content").load("home.html", function()
-    {
-      console.log(localStorage.getItem("notReloadToHome"));
-      if(justCount === 0 && stopLoadSlide === false)
-      {
-        showSlide();
-        justCount++;
-      }
-
-    });
-  });
-
-  $("#info").on("tap",function(){
-    stopLoadSlide = true;
-    localStorage.setItem("savePageForReal", "info");
-    $("#content").load("info.html");
-    justCount++;
-  });
-
-  $("#showcase").on("tap",function(){
-    stopLoadSlide = true;
-    localStorage.setItem("savePageForReal", "showcase");
-    $("#content").load("showcase.html");
-    justCount++;
-  });
-
-  $("#jTake").on("tap",function()
-  {
-    console.log("fak");
-  });
-
-});
 
 var indexOfSlide = 0;
 function showSlide()
@@ -142,14 +105,12 @@ function showSlide()
         {
           indexOfSlide = 1;
         }
-      if(indexOfSlide === 0)
+      if(justCount == 0)
       {
 
       }
-        slides[indexOfSlide-1].style.display = "block";
-        dots[indexOfSlide-1].style.backgroundColor = "yellow";
-        console.log(indexOfSlide);
-
+      slides[indexOfSlide-1].style.display = "block";
+      dots[indexOfSlide-1].style.backgroundColor = "yellow";
 
     }
 
