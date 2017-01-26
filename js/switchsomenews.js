@@ -3,7 +3,7 @@ var justCount = 0;
 $( document ).ready(function(){
   switch (localStorage.getItem("savePageForReal")) {
     case "home":
-      $(".content").load("home.html", function(){
+      $("#content").load("home.html", function(){
         stopLoadSlide=false;
         showSlide();
         justCount++;
@@ -11,14 +11,14 @@ $( document ).ready(function(){
       break;
     case "info":
         stopLoadSlide = true;
-        $(".content").load("info.html");
+        $("#content").load("info.html");
       break;
     case "showcase":
         stopLoadSlide = true;
-        $(".content").load("showcase.html");
+        $("#content").load("showcase.html");
       break;
     default:
-      $(".content").load("home.html", function(){
+      $("#content").load("home.html", function(){
         stopLoadSlide=false;
         showSlide();
         justCount++;
@@ -31,7 +31,7 @@ $( document ).ready(function(){
   $("#home").click(function(){
     stopLoadSlide = false;
     localStorage.setItem("savePageForReal", "home");
-    $(".content").load("home.html", function()
+    $("#content").load("home.html", function()
     {
       console.log(localStorage.getItem("notReloadToHome"));
       if(justCount === 0 && stopLoadSlide === false)
@@ -46,14 +46,14 @@ $( document ).ready(function(){
   $("#info").click(function(){
     stopLoadSlide = true;
     localStorage.setItem("savePageForReal", "info");
-    $(".content").load("info.html");
+    $("#content").load("info.html");
 
   });
 
   $("#showcase").click(function(){
     stopLoadSlide = true;
     localStorage.setItem("savePageForReal", "showcase");
-    $(".content").load("showcase.html");
+    $("#content").load("showcase.html");
 
   });
 
@@ -71,7 +71,7 @@ $(window).bind('load',function() {
 $( document ).on("pagecreate","#pageone",function(){
   switch (localStorage.getItem("savePageForReal")) {
     case "home":
-      $(".content").load("home.html", function(){
+      $("#content").load("home.html", function(){
         stopLoadSlide=false;
         showSlide();
         justCount++;
@@ -79,14 +79,14 @@ $( document ).on("pagecreate","#pageone",function(){
       break;
     case "info":
         stopLoadSlide = true;
-        $(".content").load("info.html");
+        $("#content").load("info.html");
       break;
     case "showcase":
         stopLoadSlide = true;
-        $(".content").load("showcase.html");
+        $("#content").load("showcase.html");
       break;
     default:
-      $(".content").load("home.html", function(){
+      $("#content").load("home.html", function(){
         localStorage.setItem("savePageForReal", "home");
         stopLoadSlide=false;
         showSlide();
@@ -100,7 +100,7 @@ $( document ).on("pagecreate","#pageone",function(){
   $("#home").on("tap",function(){
     stopLoadSlide = false;
     localStorage.setItem("savePageForReal", "home");
-    $(".content").load("home.html", function()
+    $("#content").load("home.html", function()
     {
       console.log(localStorage.getItem("notReloadToHome"));
       if(justCount === 0 && stopLoadSlide === false)
@@ -115,14 +115,14 @@ $( document ).on("pagecreate","#pageone",function(){
   $("#info").on("tap",function(){
     stopLoadSlide = true;
     localStorage.setItem("savePageForReal", "info");
-    $(".content").load("info.html");
+    $("#content").load("info.html");
 
   });
 
   $("#showcase").on("tap",function(){
     stopLoadSlide = true;
     localStorage.setItem("savePageForReal", "showcase");
-    $(".content").load("showcase.html");
+    $("#content").load("showcase.html");
 
   });
 
