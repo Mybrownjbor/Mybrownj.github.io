@@ -28,12 +28,6 @@ $( document ).ready(function(){
 
   $(".MenuSection ul").addClass("animMenu");
 
-
-  $("#jTake").click(function()
-  {
-    console.log("fak");
-  });
-
 });
 
 $("#home").click(function(){
