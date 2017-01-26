@@ -18,6 +18,11 @@ $( document ).ready(function(){
         $(".content").load("showcase.html");
       break;
     default:
+      $(".content").load("home.html", function(){
+        stopLoadSlide=false;
+        showSlide();
+        justCount++;
+      });
       console.log("HAVENT");
   }
 
